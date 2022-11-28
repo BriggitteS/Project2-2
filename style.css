@@ -1,0 +1,104 @@
+@charset "utf-8";
+
+body
+    {
+        margin: 0;
+        padding: 0;
+        background: #D2B48C;
+        font-family: Arial;
+    }
+
+.navbar ul
+{
+    list-style: none;
+    background: #6F4E37;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+}
+
+    .navbar li
+    {
+        display: inline-block;
+    }
+
+        .navbar a
+        {
+            text-decoration: none;
+            color: #f3e5ab;
+            width: 80px;
+            display: block;
+            padding: 25px 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-family: arial;
+            text-align: center;
+            font-size: 14px;
+        }
+
+.navbar a:hover{
+    background: #4166f5;
+    text-decoration: underline;
+}
+
+/* Change the color of links on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.navbar a.active {
+  background-color: #4066f5;
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+/* Grid Styles for Page Body */
+
+body {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "header header"
+                         "intro faq"
+                         "articles faq"
+                         "footer footer";
+    grid-column-gap: 15px;
+}
+
+body > header {
+grid-row: 1;
+grid-column: 1/-1;
+}
+
+body > article {grid-area: intro;}
+body > aside {grid-area: faq;}
+body > section {grid-area: articles;}
+body > footer {grid-area: footer;}
+
+
+/* Grid Styles for Nested Grid */
+section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+section > h1 {
+grid-area: 1/1/2/3;
+}
+
+body > * {
+outline: 2px dashed red;
+}
+
+section > * {
+outline: 2px dashed blue;
+}
